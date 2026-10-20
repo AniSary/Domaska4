@@ -5,6 +5,9 @@ import java.util.Scanner;
 public class Main {
 
     static double calculateTax(double income) {
+        if (income < 0) {
+            throw new IllegalArgumentException("Дохід не може бути від'ємним");
+        }
         double rate;
         if (income <= 10000) {
             rate = 0.025;
